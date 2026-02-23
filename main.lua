@@ -96,9 +96,9 @@ Input.FocusLost:Connect(function(enter)
     if not enter then return end
     local name = Input.Text
     if name == "토끼공듀" or name == "녜힁" then
-        FastGlitch("이미 존재하는 닉네임 입니다", false)
+        FastGlitch("이미 있는 닉네임입니다.", false)
     else
-        FastGlitch(name .. "님의 여행에 즐거움이 가득하시길..", true)
+        FastGlitch(name .. "님의 모험을 응원합니다", true)
     end
 end)
 
