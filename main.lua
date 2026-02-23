@@ -58,7 +58,7 @@ local function PlayGlitchEffect(targetText, isFinal)
         end
         GlitchLabel.Text = randomText
         GlitchLabel.Position = UDim2.new(0, math.random(-10, 10), 0.5, -50 + math.random(-5, 5))
-        task.wait(1)
+        task.wait(0.005)
     end
     
     GlitchLabel.Text = targetText -- 최종 텍스트 고정
