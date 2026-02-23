@@ -58,11 +58,11 @@ local function PlayGlitchEffect(targetText, isFinal)
         end
         GlitchLabel.Text = randomText
         GlitchLabel.Position = UDim2.new(0, math.random(-10, 10), 0.5, -50 + math.random(-5, 5))
-        task.wait(0.05)
+        task.wait(1)
     end
     
     GlitchLabel.Text = targetText -- 최종 텍스트 고정
-    task.wait(1)
+    task.wait(2)
 
     if isFinal then
         -- 화면이 하얀색으로 점점 변하는 효과 (White-out)
@@ -74,7 +74,7 @@ local function PlayGlitchEffect(targetText, isFinal)
 
         for i = 1, 0, -0.05 do
             Flash.BackgroundTransparency = i
-            task.wait(0.03)
+            task.wait(1)
         end
         
         MainFrame:Destroy() -- 검은 화면 제거
@@ -82,7 +82,7 @@ local function PlayGlitchEffect(targetText, isFinal)
         -- 다시 투명해지며 복구
         for i = 0, 1, 0.05 do
             Flash.BackgroundTransparency = i
-            task.wait(0.03)
+            task.wait(2)
         end
         Flash:Destroy()
         
@@ -103,9 +103,9 @@ Input.FocusLost:Connect(function(enter)
     local forbidden = {["토끼공듀"] = true, ["녜힁"] = true}
 
     if forbidden[name] then
-        PlayGlitchEffect("이미 있는 닉네임입니다.", false)
+        PlayGlitchEffect("이미 존재하는 닉네임입니다.", false)
     else
-        PlayGlitchEffect(name .. "님의 모험을 응원합니다", true)
+        PlayGlitchEffect(name .. "님의 여행에 즐거움이 가득하시길..", true)
     end
 end)
 
@@ -127,3 +127,4 @@ function CreateHeadUI(name)
     l.TextStrokeTransparency = 0 -- 글자 테두리 추가
     l.TextScaled = true
 end
+
