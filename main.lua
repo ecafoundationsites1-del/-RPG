@@ -62,7 +62,7 @@ local function PlayGlitchEffect(targetText, isFinal)
     end
     
     GlitchLabel.Text = targetText -- 최종 텍스트 고정
-    task.wait(0.2)
+    task.wait(1)
 
     if isFinal then
         -- 화면이 하얀색으로 점점 변하는 효과 (White-out)
@@ -74,7 +74,7 @@ local function PlayGlitchEffect(targetText, isFinal)
 
         for i = 1, 0, -0.05 do
             Flash.BackgroundTransparency = i
-            task.wait(1)
+            task.wait(0.03)
         end
         
         MainFrame:Destroy() -- 검은 화면 제거
@@ -82,7 +82,7 @@ local function PlayGlitchEffect(targetText, isFinal)
         -- 다시 투명해지며 복구
         for i = 0, 1, 0.05 do
             Flash.BackgroundTransparency = i
-            task.wait(2)
+            task.wait(0.03)
         end
         Flash:Destroy()
         
